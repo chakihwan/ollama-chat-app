@@ -57,6 +57,7 @@
     웹 브라우저를 열고 `http://localhost:8000`으로 접속합니다.
 
 ##  프로젝트 구조
+```text
 .
 ├── Dockerfile             # 🐳 Docker 이미지 설정 파일
 ├── main.py                # 🐍 Flask 백엔드 서버 (Ollama 프록시)
@@ -64,12 +65,12 @@
 ├── static/                # 🎨 프론트엔드 정적 파일
 │   ├── css/style.css      # (스타일시트)
 │   ├── js/app.js          # (채팅 로직 JavaScript)
-│   └── img/               # (이미지)
+│   └── img/(하고 싶은 logo)# (이미지)
 ├── templates/
 │   └── index3.html        # 💻 메인 채팅 HTML 페이지
 ├── .gitignore             # (Git 무시 목록)
 └── chatTest.py            # (Ollama API 테스트용 스크립트)
-
+```
 ## 🔧 설정 (Configuration)
 
 이 프로젝트는 학습용으로 일부 설정이 하드코딩되어 있습니다.
