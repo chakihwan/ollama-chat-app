@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>Ollama Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <symbol id="icon-plus-square" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-4 10h-3v3h-2v-3H7v-2h3V8h2v3h3v2Z"/>
+    </symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94c0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.57-.25l-2.4.96a.49.49 0 0 0-.67.11L14.06 4.8c-.2-.17-.41-.31-.63-.42L12.96 2.2a.49.49 0 0 0-.49-.4H8.53a.49.49 0 0 0-.49.4L7.57 4.38c-.22.11-.43.25-.63.42l-1.6-1.28a.49.49 0 0 0-.67-.11L2.25 6.73a.49.49 0 0 0-.11.61l2.03 1.58c-.05.3-.07.62-.07.94c0 .32.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.33.57.25l2.4-.96c.18.14.37.27.57.39l.47 2.18c.07.3.33.5.64.5h3.94c.31 0 .57-.2.64-.5l.47-2.18c.2-.12.39-.25.57-.39l2.4.96c.2.08.45-.03.57-.25l1.92-3.32a.49.49 0 0 0-.12-.61l-2.03-1.58Z"/>
+    </symbol>
+    <symbol id="icon-send" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M3 20v-6l8-2l-8-2V4l19 8l-19 8Z"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+    </symbol>
+  </svg>
+
+  <div class="app-container" id="app-container">
+    
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <img src="{{ url_for('static', filename='img/alpaca-character.png') }}" alt="로고" class="custom-logo-header" />
+        <span>Ollama</span>
+      </div>
+      <button class="nav-item" id="new-chat">
+        <svg class="icon"><use href="#icon-plus-square"></use></svg>
+        <span>New Chat</span>
+      </button>
+      <button class="nav-item">
+        <svg class="icon"><use href="#icon-settings"></use></svg>
+        <span>Settings</span>
+      </button>
+      <div class="sidebar-history">
+        <h3 class="history-title">Older</h3>
+        <div id="history-list"></div>
+      </div>
+    </nav>
+
+    <main class="chat-area">
+      <div class="chat-header">
+        <button id="sidebar-toggle" title="Toggle sidebar">
+          <svg><use href="#icon-menu"></use></svg>
+        </button>
+        <span id="chat-title">New Chat</span>
+      </div>
+
+      <div class="chat-messages" id="chat" style="display: none;"></div>
+      <div class="empty-chat-placeholder" id="empty-state">
+        <img src="{{ url_for('static', filename='img/alpaca-character.png') }}" alt="로고" class="custom-logo-empty" />
+        <span>Send a message</span>
+      </div>
+
+      <div class="chat-input-area">
+        
+        <div class="input-wrapper" id="input-wrapper">
+          <textarea id="prompt" placeholder="Send a message" rows="1"></textarea>
+          <div class="model-pill" title="Current model">gemma3:4b</div>
+          <button id="send" title="Send message">
+            <svg class="send-icon"><use href="#icon-send"></use></svg>
+            <span class="spinner" style="display: none;"></span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

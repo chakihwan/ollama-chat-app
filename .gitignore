@@ -1,0 +1,14 @@
+# Python 가상환경 및 캐시
+venv/
+*.pyc
+__pycache__/
+.env
+
+# OS/편집기 설정 파일 (Mac, Windows, VSCode)
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# (만약 나중에 빌드한다면) Docker 빌드 컨텍스트에서 무시할 파일들
+# *.log
