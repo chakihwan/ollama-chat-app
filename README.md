@@ -1,11 +1,16 @@
 # Ollama Chat Web UI
 
-이 프로젝트는 로컬 LLM(Ollama)을 웹 브라우저에서 직접 사용할 수 있는 채팅 UI로 구현한 것입니다. **로컬 LLM을 웹 페이지로 만드는 단계를 학습**하려는 목적으로 제작되었습니다.
+이 프로젝트는 Ollama앱을 모방하여 로컬 LLM(Ollama)을 웹 브라우저에서 직접 사용할 수 있는 채팅 UI로 구현한 것입니다. 
+**로컬 LLM을 웹 페이지로 만드는 단계를 학습**하려는 목적으로 제작되었습니다.
 
 백엔드는 **Python Flask**로, 프론트엔드는 **Vanilla JavaScript**로 작성되었으며, 전체 애플리케이션은 **Docker**를 통해 쉽게 실행할 수 있도록 패키징되었습니다.
 
-(여기에 웹 UI 스크린샷을 추가하면 좋습니다)
-`![Ollama Chat UI 스크린샷](link-to-screenshot.png)`
+## 시연 영상
+
+
+https://github.com/user-attachments/assets/16b949c8-4edc-4687-8b08-f25bb4a714ee
+
+
 
 ##  주요 기능
 
